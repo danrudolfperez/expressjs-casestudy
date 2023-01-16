@@ -11,6 +11,7 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
+mongoose.set("strictQuery", false);
 
 const uri = process.env.ATLAS_URI;
 // mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true } // useCreateIndex is not supported
