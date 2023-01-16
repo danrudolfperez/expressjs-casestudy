@@ -14,8 +14,8 @@ app.use(express.json());
 mongoose.set("strictQuery", false);
 
 const uri = process.env.ATLAS_URI;
-// mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true } // useCreateIndex is not supported
 mongoose.connect(uri, { useNewUrlParser: true}
+// mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true } // useCreateIndex is not supported
 
 );
 const connection = mongoose.connection;
@@ -34,20 +34,20 @@ app.use('/businesses', businessesRouter);
 app.use('/products', productsRouter);
 app.use('/inventory', inventoryRouter);
 
-app.get('/', (req, res) => {
-  res.send('Hey this is my API running')
-})
+// app.get('/', (req, res) => {
+//   res.send('Hey this is my API running')
+// })
 
-app.get('/test', (req, res) => {
-  res.send('This is my test route..... ')
-})
+// app.get('/test', (req, res) => {
+//   res.send('This is my test route..... ')
+// })
 
-let UserTest = require('./models/user.model');
-app.get('/usertest', (req, res) => {
-  UserTest.find()
-  .then(users => res.json(users))
-  .catch(err => res.status(400).json('Error: ' + err));
-})
+// let UserTest = require('./models/user.model');
+// app.get('/usertest', (req, res) => {
+//   UserTest.find()
+//   .then(users => res.json(users))
+//   .catch(err => res.status(400).json('Error: ' + err));
+// })
 
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
