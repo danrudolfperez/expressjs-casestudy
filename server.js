@@ -41,7 +41,7 @@ app.get('/test', (req, res) => {
   res.send('This is my test route..... ')
 })
 
-let UserTest = require('../models/user.model');
+let UserTest = require('./models/user.model');
 app.get('/usertest', (req, res) => {
   UserTest.find()
   .then(users => res.json(users))
