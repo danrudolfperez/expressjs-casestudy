@@ -41,6 +41,13 @@ app.get('/test', (req, res) => {
   res.send('This is my test route..... ')
 })
 
+let UserTest = require('../models/user.model');
+app.get('/usertest', (req, res) => {
+  UserTest.find()
+  .then(users => res.json(users))
+  .catch(err => res.status(400).json('Error: ' + err));
+})
+
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
 });
