@@ -7,17 +7,19 @@ router.route('/').post((req, res) => {
     const apicode = req.params.Apicode;
     const senderid = req.params.SenderId;
 
+    var data = JSON.stringify({
+      "Recipients": recipients,
+      "Message": message,
+      "ApiCode": apicode,
+      "SenderId": senderid
+    });
+
 	axios.post("https://api.itexmo.com/api/broadcast", {
         headers: {
             'Content-Type': 'application/json',
             'Authorization': 'Basic Y3J5cHRvZGlwdGVyYUBnbWFpbC5jb206SWFtR3JlYXQxMjM0ISQ='
         },
-        data: {
-            Recipients: [recipients],
-            Message: message,
-            ApiCode: apicode,
-            SenderId: senderid
-        }
+        data: data
 	})
 		.then(response => {
 			res.status(200).json(response.data);
