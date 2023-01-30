@@ -5,7 +5,7 @@ router.route('/').post((req, res) => {
 
     var config = {
       method: 'post',
-      url: 'https://api.itexmo.com/api/broadcast?Recipients=["09295043363"]&Message=Test&Apicode=PR-DANRU483889_87FEP&SenderId=QUICKLEAN',
+      url: 'https://api.itexmo.com/api/broadcast?Recipients=["09295043363"]&Message=Test&ApiCode=PR-DANRU483889_87FEP&SenderId=QUICKLEAN',
       headers: { 
         'Authorization': 'Basic Y3J5cHRvZGlwdGVyYUBnbWFpbC5jb206SWFtR3JlYXQxMjM0ISQ='
       }
@@ -13,12 +13,12 @@ router.route('/').post((req, res) => {
     
     axios(config)
     .then(function (response) {
-      console.log(JSON.stringify(response.data));
+    //   console.log(JSON.stringify(response.data));
       res.status(200).json(response.data);
     })
     .catch(function (error) {
       console.log(error);
-      res.status(500).json({ message: err });
+    //   res.status(500).json({ message: err });
     });
 
 
