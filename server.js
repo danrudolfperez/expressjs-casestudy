@@ -28,13 +28,11 @@ const usersRouter = require('./routes/users');
 const businessesRouter = require('./routes/businesses');
 const productsRouter = require('./routes/products');
 const inventoryRouter = require('./routes/inventory');
-const smsRouter = require('./routes/smsapi');
 
 app.use('/users', usersRouter);
 app.use('/businesses', businessesRouter);
 app.use('/products', productsRouter);
 app.use('/inventory', inventoryRouter);
-app.use('/sms', smsRouter);
 
 // app.get('/', (req, res) => {
 //   res.send('Hey this is my API running')
