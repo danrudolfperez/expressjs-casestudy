@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const axios = require("axios");
 
-router.route('/send').post((req, res) => {
+router.route('/').get((req, res) => {
 
     var config = {
         method: 'post',
